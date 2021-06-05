@@ -55,3 +55,8 @@ executing the "all_employees_for_a_department.sql" by passing department_id will
 
 8. Write a report to show the total of Employee Salary for a Department
 executing the "total_employee_salary_for_a_department.sql" by passing department_id will return sum of employee salary for a department
+
+
+
+Testing
+    At work i use TOAD for DDL, DML and PL/SQL and to test in different instances / environment.
