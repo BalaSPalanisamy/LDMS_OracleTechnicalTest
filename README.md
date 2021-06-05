@@ -18,19 +18,20 @@ execute new_employee_prc ('Peter', 'Salesperson', null, to_date('14-06-19', 'dd-
 Re-run the same above script will display that the 'Employee Already Exists. Please check the Employee Details'
 
 4. Create an appropriate executable database object to allow the Salary for an Employee to be increased or decreased by a percentage
-pre-requisite: execute the procedure "new_employee_prc.prc" 
+pre-requisite: execute the package spec and body "employee_update_pkg.pks" and "employee_update_pkg.pkb"
 E.g.,
 To increase the salary 
-execute new_salary_payment_prc(90004, 'Selwyn Field', 10);
+execute employee_update_pkg.new_salary_payment_prc(90004, 'Selwyn Field', 10);
 E.g.,
 To decrease the salary 
-execute new_salary_payment_prc(90004, 'Selwyn Field', -5);
+execute employee_update_pkg.new_salary_payment_prc(90004, 'Selwyn Field', -5);
 
 5. Create an appropriate executable database object to allow the transfer of an Employee to a different Department
-pre-requisite: execute the procedure "emp_new_depart_prc.prc" 
+pre-requisite: execute the package spec and body "employee_update_pkg.pks" and "employee_update_pkg.pkb"
+
 E.g.,
 to transfer an Employee to new department, execute the below script
-execute emp_new_depart_prc(90003, 'Roxy Jones', 'Engineer', 'Engineering');
+execute employee_update_pkg.emp_new_depart_prc(90003, 'Roxy Jones', 'Engineer', 'Engineering');
 
 6. Create an appropriate executable database object to return the Salary for an Employee.
 pre-requisite: execute the function emp_salary_fnc.fnc
