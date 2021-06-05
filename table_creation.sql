@@ -16,3 +16,7 @@ create table employee (
 	constraint pk_emp primary key(employee_id),
 	constraint fk_dept foreign key (department_id) references department (department_id)
 );
+
+create sequence s_emp_id 
+start with 90050
+increment by 1;

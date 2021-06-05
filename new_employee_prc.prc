@@ -7,9 +7,9 @@ emp_count number := 0;
 e_emp_count exception;
 BEGIN
     begin
-        select max(employee_id) + 1 
+        select s_emp_id.nextval
         into s_employee_id
-        from employee;
+        from dual;
     end;
 
     begin
@@ -19,7 +19,7 @@ BEGIN
         where employee_name = p_manager;
     exception
         when no_data_found then
-            p_manager_id := 0;
+            p_manager_id := null;
     end;
     
     begin
@@ -57,7 +57,7 @@ BEGIN
         )
         values 
         (
-            s_employee_id,
+            s_employee_id, 
             p_employee_name, 
             p_job_title, 
             p_manager_id, 

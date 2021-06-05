@@ -1,10 +1,21 @@
 # LDMS_OracleTechnicalTest
-I have used Oracle Live SQL to develop the below scripts.  To execute the scripts click on the “run button” or select the script and press “ctrl + enter”
+I have used Oracle Live SQL to develop the below scripts.  
+
+To execute the scripts click on the “run button” 
+                    or 
+select the script and press “ctrl + enter”
+
 1. Create the necessary data structures to contain the data specified in the Appendix ensuring that data integrity is enforced
-Created data structure "table_creation.sql" for department and employee table with data constraints (primary, foreign key)
+Created data structure "table_creation.sql" for department and employee table with data constraints (primary, foreign key) also created sequence
+s_emp_id to auto generate the employee_id in a sequence for new employee on employee table
 
 2. Populate the Departments and Employees data structures using the data specified in the Appendix
 "insert_record.sql" file contains the insert script for department and employee table
+
+NOTE: - once you run the script on oracle live sql you can see the inserted records but when you download the csv file, you can see &amp; instead of '&' (like given below). This is due to production defect on oracle live sql. Nothing to do with the script
+
+DEPARTMENT_ID	DEPARTMENT_NAME	                LOCATION
+3	            Research &amp; Development      Edinburgh                                         
 
 3. Create an appropriate executable database object to allow an Employee to be created
 pre-requisite: execute the procedure "new_employee_prc.prc" 
@@ -37,7 +48,7 @@ execute employee_update_pkg.emp_new_depart_prc(90003, 'Roxy Jones', 'Engineer', 
 pre-requisite: execute the function emp_salary_fnc.fnc
 E.g.,
 To return the salary of an Employee, execute the below script
-select emp_salary_fnc(90003, 'Roxy Jones') from dual;
+select emp_salary_fnc(90003, 'Roxy Jones') emp_salary from dual;
 
 7. Write a report to show all Employees for a Department
 executing the "all_employees_for_a_department.sql" by passing department_id will return all employees of the department requested
